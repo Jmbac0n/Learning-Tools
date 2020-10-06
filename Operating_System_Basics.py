@@ -4,19 +4,30 @@ Q1 = {
     'correct_answer' : "2"
 }
 
+Q2 = {
+    'question' : "How do I open the start menu in Win 10?",
+    'answers' : "1. The Win Icon 2. Ask Nicely 3. You don't",
+    'correct_answer' : "1"
+}
+
 print(Q1['question'])
 
 def ask_questions():
 
+    questions_array = [Q1, Q2]
+
+    array_length = len(questions_array)
+
     correct_answers = 0
 
-    print(Q1['question'])
-    print(Q1['answers'])
-    answer = input()
-    if answer == (Q1['correct_answer']):
-        print("Correct")
-        correct_answers = correct_answers + 1
-    elif answer != (Q1['correct_answer']):
-        print("Incorrect")
+    for x in range(0, array_length):
+        print(questions_array[x]['question'])
+        print(questions_array[x]['answers'])
+        answer = input()
+        if answer == (questions_array[x]['correct_answer']):
+            print("Correct")
+            correct_answers = correct_answers + 1
+        elif answer != (questions_array[x]['correct_answer']):
+            print("Incorrect")
     
     print(correct_answers)
